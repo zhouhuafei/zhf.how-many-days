@@ -17,11 +17,14 @@
      * */
     function howManyDays(year, month) {
         year = Number(year);
+        const isLeapYear = (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+        if (month === undefined) {
+            return isLeapYear ? 366 : 365;
+        }
         month = Number(month);
         // 为什么不使用日期对象(Date)做，因为nodejs和浏览器解析有差异
         let twoMonthDays = 28;
         // 能被4整数但是不能被100整除或者能直接被400整除
-        const isLeapYear = (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
         if (isLeapYear) {
             twoMonthDays = 29;
         }
