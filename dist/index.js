@@ -23,6 +23,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
      * @param {Number} month - 月
      * */
     function howManyDays(year, month) {
+        year = Number(year);
+        month = Number(month);
         // 为什么不使用日期对象(Date)做，因为nodejs和浏览器解析有差异
         var twoMonthDays = 28;
         // 能被4整数但是不能被100整除或者能直接被400整除
@@ -32,7 +34,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         }
         var day31 = [1, 3, 5, 7, 8, 10, 12];
         var day30 = [4, 6, 9, 11];
-        month = Number(month);
         if (month === 2) {
             return twoMonthDays;
         } else if (day31.indexOf(month) !== -1) {
