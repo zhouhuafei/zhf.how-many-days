@@ -16,5 +16,16 @@ test(`某年某月有多少天`, () => {
     expect(howManyDays(2015, 2)).toEqual(28);
     expect(howManyDays(2016, 2)).toEqual(29);
     expect(howManyDays(2017, 2)).toEqual(28);
+    expect(howManyDays(2018, 1)).toEqual(31);
     expect(howManyDays(2018, 2)).toEqual(28);
+    expect(howManyDays(2018, 3)).toEqual(31);
+    expect(howManyDays(2018, 4)).toEqual(30);
+    expect(howManyDays(2018, 5)).toEqual(31);
+    expect(howManyDays(2018, 6)).toEqual(30);
+    expect(howManyDays(2018, 7)).toEqual(31);
+    expect(howManyDays(2018, 8)).toEqual(31);
+    expect(howManyDays(2018, 9)).toEqual(30);
+    expect(howManyDays(2018, 10)).toEqual(31);
+    expect(howManyDays(2018, 11)).toEqual(30);
+    expect(howManyDays(2018, 12)).toEqual(31);
 });
