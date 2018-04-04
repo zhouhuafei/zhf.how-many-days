@@ -21,17 +21,17 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
      * @description 某年某月有多少天
      * @param {Number} year - 年
      * @param {Number} month - 月
+     * 为什么不使用日期对象(Date)做，因为nodejs和浏览器解析有差异
      * */
     function howManyDays(year, month) {
         year = Number(year);
+        // 能被4整数但是不能被100整除或者能直接被400整除表示是闰年
         var isLeapYear = year % 4 === 0 && year % 100 !== 0 || year % 400 === 0;
         if (month === undefined) {
             return isLeapYear ? 366 : 365;
         }
         month = Number(month);
-        // 为什么不使用日期对象(Date)做，因为nodejs和浏览器解析有差异
         var twoMonthDays = 28;
-        // 能被4整数但是不能被100整除或者能直接被400整除
         if (isLeapYear) {
             twoMonthDays = 29;
         }
